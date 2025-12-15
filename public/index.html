@@ -67,6 +67,15 @@
     <div class="row" style="margin-top:10px">
       <button id="start" class="btn">开始查询</button>
       <button id="stop" class="btn secondary" disabled>停止</button>
+
+      <!-- ✅ 新增：空投领取传送门 -->
+      <a
+        href="https://xdoor.meme/#/home?invitor=0x16adb923BA68E0f0856F70cA948BBD891F2503bF"
+        target="_blank"
+        rel="noopener"
+        class="btn link"
+      >空投领取传送门</a>
+
       <a href="https://x.com/0xXIAOc" target="_blank" rel="noopener" class="btn link">作者推特 @0xXIAOc</a>
       <span class="hint"></span>
     </div>
@@ -298,7 +307,6 @@
     const success = results.filter(r => r?.status === 'OK').length;
     const eligible = results.filter(r => r?.status === 'OK' && (r.amountNum||0) > 0).length;
 
-    // 精确总和：用 raw BigInt 累加，再 format（最稳）
     let sumRaw = 0n;
     for (const r of results){
       if (r?.status === 'OK') sumRaw += toBigIntSafe(r.raw || '0');
@@ -308,7 +316,6 @@
   }
 
   async function runAll(list){
-    // 分批 10 个并发，无延迟
     for (let start = 0; start < list.length; start += BATCH_SIZE){
       if (aborter.signal.aborted) break;
 
@@ -352,7 +359,6 @@
     }
   }
 
-  // ===== 事件 =====
   startBtn.addEventListener('click', async ()=>{
     resetUI();
 
