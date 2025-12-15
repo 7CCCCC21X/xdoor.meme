@@ -29,15 +29,13 @@
   .btn.link{background:#eef2ff;color:#1d4ed8;border-color:#dbe3ff}
   .btn[disabled]{opacity:.6;cursor:not-allowed}
 
-  /* ✅ 橙色领取按钮 */
+  /* 橙色领取按钮 */
   .btn.claim{
-    background:#fff7ed;        /* 浅橙底 */
-    color:#c2410c;             /* 橙色字 */
-    border-color:#fed7aa;      /* 橙色边框 */
+    background:#fff7ed;
+    color:#c2410c;
+    border-color:#fed7aa;
   }
   .btn.claim:hover{ filter: brightness(.98); }
-
-  /* ✅ 左侧小方块“领”标志 */
   .badge-claim{
     width:20px;height:20px;border-radius:6px;
     display:inline-grid;place-items:center;
@@ -81,7 +79,7 @@
   <div class="card">
     <div class="row" style="width:100%">
       <div style="flex:1">
-        <label for="addrs" class="hint">钱包地址（每行一个）</label>
+        <label for="addrs" class="hint">钱包地址（每行一个，EVM 0x…）</label>
         <textarea id="addrs" placeholder="0x....&#10;0x...."></textarea>
       </div>
     </div>
@@ -90,7 +88,6 @@
       <button id="start" class="btn">开始查询</button>
       <button id="stop" class="btn secondary" disabled>停止</button>
 
-      <!-- ✅ 橙色领取传送门 + 左侧小方块“领” -->
       <a
         href="https://xdoor.meme/#/home?invitor=0x16adb923BA68E0f0856F70cA948BBD891F2503bF"
         target="_blank"
@@ -103,7 +100,6 @@
       </a>
 
       <a href="https://x.com/0xXIAOc" target="_blank" rel="noopener" class="btn link">作者推特 @0xXIAOc</a>
-      <span class="hint"></span>
     </div>
 
     <div class="row" style="margin-top:10px">
@@ -139,9 +135,6 @@
       </thead>
       <tbody id="tbody"></tbody>
     </table>
-    <div class="hint" style="margin-top:8px">
-       <span class="addr"></span>
-    </div>
   </div>
 </div>
 
