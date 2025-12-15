@@ -28,6 +28,28 @@
   .btn.ghost{background:#fff;color:#1f2937}
   .btn.link{background:#eef2ff;color:#1d4ed8;border-color:#dbe3ff}
   .btn[disabled]{opacity:.6;cursor:not-allowed}
+
+  /* ✅ 橙色领取按钮 */
+  .btn.claim{
+    background:#fff7ed;        /* 浅橙底 */
+    color:#c2410c;             /* 橙色字 */
+    border-color:#fed7aa;      /* 橙色边框 */
+  }
+  .btn.claim:hover{ filter: brightness(.98); }
+
+  /* ✅ 左侧小方块“领”标志 */
+  .badge-claim{
+    width:20px;height:20px;border-radius:6px;
+    display:inline-grid;place-items:center;
+    background:#ffedd5;
+    border:1px solid #fdba74;
+    color:#c2410c;
+    font-size:12px;
+    font-weight:900;
+    line-height:1;
+    letter-spacing:.5px;
+  }
+
   .hint{color:var(--muted);font-size:12px}
   .summary{margin-top:10px}
   .summary b{font-weight:800}
@@ -68,13 +90,17 @@
       <button id="start" class="btn">开始查询</button>
       <button id="stop" class="btn secondary" disabled>停止</button>
 
-      <!-- ✅ 新增：空投领取传送门 -->
+      <!-- ✅ 橙色领取传送门 + 左侧小方块“领” -->
       <a
         href="https://xdoor.meme/#/home?invitor=0x16adb923BA68E0f0856F70cA948BBD891F2503bF"
         target="_blank"
         rel="noopener"
-        class="btn link"
-      >空投领取传送门</a>
+        class="btn claim"
+        title="打开 XDoor 空投领取页面"
+      >
+        <span class="badge-claim">领</span>
+        空投领取传送门
+      </a>
 
       <a href="https://x.com/0xXIAOc" target="_blank" rel="noopener" class="btn link">作者推特 @0xXIAOc</a>
       <span class="hint"></span>
